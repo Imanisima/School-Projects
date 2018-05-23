@@ -1,13 +1,5 @@
 /**
- * Name: Imani Martin
- * ID: 80576125
- * Class: CS2302
- * Professor: Dr. Olac Fuentes
- * TA: Zakia Al Kadri
- * Lab #: 1
- * Due: Wednesday, Jan. 31, 18
- * Used with: StdDraw.java
- *
+ * 
  * Purpose: The purpose of this lab is to draw figures/fractals recursively using the StdDraw Class. Geometry and basic algebra
  *  are necessary in order to create some of the shapes. A slideshow has been implemented into the main method. If at any
  *  reason there are "zero" number of levels, the slideshow will skip over that figure and go to the next one.
