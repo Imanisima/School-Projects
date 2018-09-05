@@ -1,2 +1,2 @@
 # CS
-School Work
+Labs in Java
