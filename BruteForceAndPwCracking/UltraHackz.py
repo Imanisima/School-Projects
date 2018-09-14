@@ -8,12 +8,11 @@ Lab: 1: Recursion
 Date: 4.September.2018
 Class: CS2302 - 1:30
 
-Purpose: Demonstrate real world applications of recursion. In this case, password cracking
+Purpose: Using recursion, generate all possible passwords.
 
-Questions:
-How do I generate the word list recursively? Do I really need the dictionary?
+About: A txt file is uploaded containing 100 records with information on 100 system accounts. For each record, there is a username, salt value, and hashed password. Generate an equivalent hash to the real account's password.
 
-Comments: Still messy. Problems finding the right hash.
+Comments: Passwords successfully generated recursively. Drawback: Because there are so many passwords and accounts, it takes over 5 minutes to generate.
 
 """
 
@@ -21,44 +20,19 @@ def main():
     """ generating a word list """
     minChars = int(3)  # Min number of characters required for the password
     maxChars = int(7)  # Max number of characters required for the password
-    maxNumOfWords = int(1000)
-    possibleValues = string.digits
 
-    generateWordList(minChars, maxChars, maxNumOfWords, possibleValues)
-
-    # wordList = open("wordList.txt", "r")  # Testing
-    # print(wordList.read())  # Testing
-    # wordList.close()  # Testing
-
-    with open("wordList.txt", "r") as f:  # save words to a list
-        wordList = [line.strip() for line in f]  # .strip() removes trailing characters
-
-    # print(wordList)  # Testing
-
-    """ Read from file """
     username = []
     saltValue = []
     originalHash = []
 
     # Read original texts
     readFromTxt(username, saltValue, originalHash)
+    # print(username)
+    # print(saltValue)
+    # print(originalHash)
 
-    # Crack the password
-    crackPassword(username, saltValue, originalHash, wordList)
-
-# Creates a file and generate a list of words
-def generateWordList(minChars, maxChars, maxNumOfWords, possibleValues):
-    word = ""
-    with open("wordList.txt", "w") as wordList:  # create and write to a file that will contain the generated passwords
-        for i in range(0, maxNumOfWords):
-            for j in random.sample(possibleValues, random.randint(minChars, maxChars)):
-                word += j
-            wordList.write(word + "\n")
-            word = ""
-    wordList.close()
-
-    print("Possible passwords have been successfully generated!")
-    return wordList
+    # Generating possible passwords
+    generatePossiblePw(username, minChars, maxChars, saltValue, originalHash)
 
 
 # Reads the file containing records, and splits columns
@@ -69,32 +43,55 @@ def readFromTxt(username, saltValue, originalHash):
         print("Cannot locate file!")
 
     for line in f:
-        username.append(line.strip().split(",")[0])
-        saltValue.append(line.strip().split(",")[1])
-        originalHash.append(line.strip().split(",")[2])
+        username.append(line.rstrip().split(",")[0])
+        saltValue.append(line.rstrip().split(",")[1])
+        originalHash.append(line.rstrip().split(",")[2])
 
     f.close()
 
-def crackPassword(username, saltValue, originalHash, wordList):
-    # for user in username:
-    #     print(user)
 
-    # for guess in wordList:
-    for i in range(len(wordList)):
+# Generate a list of words
+def generatePossiblePw2(username, minChars, saltValue, originalHash):
+    passwords = []
+
+    print("genPw2 Method")
+    minChars = 3
+    for i in range(1000):
+        print("i is now: ", i)
         for j in range(len(originalHash)):
-            print("Original hash: ", originalHash[i])
-            newStr = str(wordList[i]) + saltValue[j]
-            # print("Concat finished: " + newStr)
-            newHash = hash_with_sha256(newStr)
-            print("New hash " + newHash)
+            i = str(i).format(i).zfill(minChars) # acheives the 000 - 9999chars
+            print("salt value: ", saltValue[j]) # testing
+            password = compareHash(i, saltValue[j], originalHash[j])
+            passwords.append(password) # testing
+            print(passwords) # testing
+    return passwords
 
-            if newHash == originalHash[j]:
-                print("Password found: ", newHash)
-                break
-            # else:
-            #     print("Comparing... ")
-            elif newHash != originalHash[j]:
-                print("Comparing... ")
+
+def generatePossiblePw(username, minChars, maxChars, saltValue, originalHash):
+    print("genpw method")
+    if minChars < maxChars:
+        password = generatePossiblePw2(username, minChars+1, saltValue, originalHash)
+        return password + generatePossiblePw(username, minChars+1, maxChars, saltValue, originalHash)
+    else:
+        return []
+
+
+# Comparing hash from the records to password generated
+def compareHash(password, saltValue, originalHash):
+    print("Compare Hash Method")
+    for i in range(len(originalHash)):
+        print("Original Hash: ", originalHash) # testing
+        newStr = password + saltValue  # concating password and salt value
+        print("newStr: ", newStr) # testing
+        newHash = hash_with_sha256(newStr)  # hashing the new pw
+        print("newHash: ", newHash) # testing
+
+        if newHash == originalHash:  # password equivalent found
+            print("Password found!")
+            return password
+
+        print("Password not found")
+        return -1
 
 
 # Create a new hash to be compared with original hash
