@@ -1,7 +1,6 @@
 import hashlib
 
 """
-Name: Imani Martin
 Lab: 1: Recursion
 Date: 4.September.2018
 Class: CS2302 - 1:30
