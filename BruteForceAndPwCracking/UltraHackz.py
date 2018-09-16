@@ -1,6 +1,7 @@
 import hashlib
 
 """
+Name: Imani Martin
 Lab: 1: Recursion
 Date: 4.September.2018
 Class: CS2302 - 1:30
@@ -68,24 +69,23 @@ def generatePossiblePw(username, minChars, maxChars, saltValue, originalHash):
         return []
 
 
-# Comparing hash from the records to the password generated
+# Comparing hash from the records to password generated
 def compareHash(password, saltValue, originalHash, username):
-    for i in range(len(originalHash)):
-        # Concating salt value and password to create new hash
-        newStr = password + saltValue
-        newHash = hash_with_sha256(newStr)
+    # Concating salt value and password to create new hash
+    newStr = password + saltValue
+    newHash = hash_with_sha256(newStr)
 
-        # password equivalent found
-        if newHash == originalHash:
-            # Save new password to a file
-            with open("found_Pws.txt", "a+") as pwList:
-                pwList.write(username + ": " + password + "\n")
-            # pwList.close()
+    # password equivalent found
+    if newHash == originalHash:
+        # Save new password to a file
+        with open("found_Pws.txt", "a+") as pwList:
+            pwList.write(username + ": " + password + "\n")
+        # pwList.close()
 
-            print(username + "\n Original Hash: %s\n Compared Hash: %s\n Equivalent password: %s" % (originalHash, newHash, password))
-            return password
+        print(username + "\n Original Hash: %s\n Compared Hash: %s\n Equivalent password: %s" % (originalHash, newHash, password))
+        return password
 
-        return -1
+    return -1
 
 
 # Create a new hash to be compared with original hash
