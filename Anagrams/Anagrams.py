@@ -5,31 +5,24 @@ from RedBlackTree import RedBlackTree
 """
 Name: Imani Martin
 Lab #: 3
+Class: CS2302 1:30
 
 Purpose: Prints all the permutations of each word and checks if that word is a part of the English language.
 """
+
 
 # Populates the english words using a binary search tree
 def english_words(BSTree):
     file = open("word.txt", "r")
     for line in file:
         l = line.split("\n")
+        print(line)
         if isinstance(BSTree, AVLTree):
             BSTree.insert(Node(l[0]))
         else:
             BSTree.insert(l[0])
 
-
     file.close()
-
-
-def AVL_Tree():
-    print("You've selected the AVL TREE")
-
-
-
-def RedBlack_Tree():
-    print("You've selected the RED AND BLACK TREE")
 
 
 # Prints all of the anagrams of a given word
@@ -50,7 +43,6 @@ def print_anagrams(word, prefix=""):
                 print_anagrams(before + after, prefix + cur)
 
 
-
 # Asks user which tree they would like populated
 def main():
     print("Welcome to the Anagram!\nWhat kind of tree would you like to populate?")
@@ -58,13 +50,18 @@ def main():
     user_choice = input()
 
     if user_choice is "1":
-        AVL_Tree()
+        print("You've selected the AVL TREE")
+        BSTree = AVLTree()
 
     elif user_choice is "2":
-        RedBlack_Tree()
+        print("You've selected the RED AND BLACK TREE")
+        BSTree = RedBlackTree()
 
     else:
         print("Invalid answer. Please try again.")
+
+    english_words(BSTree)
+    print_anagrams(BSTree, "love")
 
 
 main()
