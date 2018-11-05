@@ -16,7 +16,7 @@ def english_words(BSTree):
     file = open("word.txt", "r")
     for line in file:
         l = line.split("\n")
-        print(line)
+        # print(line)
         if isinstance(BSTree, AVLTree):
             BSTree.insert(Node(l[0]))
         else:
@@ -52,6 +52,10 @@ def main():
     if user_choice is "1":
         print("You've selected the AVL TREE")
         BSTree = AVLTree()
+        print("English words")
+        english_words(BSTree)
+        print("Printing Anagrams")
+        print_anagrams("spot")
 
     elif user_choice is "2":
         print("You've selected the RED AND BLACK TREE")
@@ -60,8 +64,8 @@ def main():
     else:
         print("Invalid answer. Please try again.")
 
-    english_words(BSTree)
-    print_anagrams(BSTree, "love")
+    # english_words(BSTree)
+    # print_anagrams(BSTree, "spot")
 
 
 main()
