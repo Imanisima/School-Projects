@@ -1,4 +1,5 @@
 class Node:
+    # Constructor with a key parameter creates the Node object.
     def __init__(self, key):
         self.key = key
         self.parent = None
@@ -6,57 +7,65 @@ class Node:
         self.right = None
         self.height = 0
 
-    # Calculate balance factor
+    # Calculate the current nodes' balance factor,
+    # defined as height(left subtree) - height(right subtree)
     def get_balance(self):
-        left_height, right_height = -1
-
-        # get current height of left subtree
+        # Get current height of left subtree, or -1 if None
+        left_height = -1
         if self.left is not None:
             left_height = self.left.height
 
-        # current height of right subtree
+        # Get current height of right subtree, or -1 if None
+        right_height = -1
         if self.right is not None:
             right_height = self.right.height
 
-        # balance factor
+        # Calculate the balance factor.
         return left_height - right_height
 
+    # Recalculate the current height of the subtree rooted at
+    # the node, usually called after a subtree has been
+    # modified.
     def update_height(self):
-        # recalculate the current height of the subtree
-        left_height, right_height = -1
+        # Get current height of left subtree, or -1 if None
+        left_height = -1
         if self.left is not None:
             left_height = self.left.height
 
+        # Get current height of right subtree, or -1 if None
+        right_height = -1
         if self.right is not None:
             right_height = self.right.height
 
+        # Assign self.height with calculated node height.
         self.height = max(left_height, right_height) + 1
 
-    # Determine where to place the newest child
-    def set_child(self, new_child, child):
-        if new_child != "left" and new_child != "right":
+    # Assign either the left or right data member with a new child.
+    def set_child(self, which_child, child):
+
+        # Ensure which_child is properly assigned.
+        if which_child != "left" and which_child != "right":
             return False
 
-        if new_child == "left":
+        # Assign the left or right data member.
+        if which_child == "left":
             self.left = child
         else:
             self.right = child
-
-        # assign parent data of the new child
         if child is not None:
             child.parent = self
-
-        # update height of the subtree
         self.update_height()
         return True
 
-    # replace current child with new child
+    # Replace a current child with a new child.
     def replace_child(self, current_child, new_child):
         if self.left is current_child:
             return self.set_child("left", new_child)
         elif self.right is current_child:
             return self.set_child("right", new_child)
 
+        # If neither of the above cases applied, then the new child
+        # could not be attached to this node.
         return False
 
 
@@ -64,41 +73,62 @@ class AVLTree:
     def __init__(self):
         self.root = None
 
-    # left rotation
+    # Performs a left rotation at the given node. Returns the
+    # new root of the subtree.
     def rotate_left(self, node):
+        # Define a convenience pointer to the right child of the
+        # left child.
         right_left_child = node.right.left
 
-        if node.parent is not Node:
+        # Step 1 - the right child moves up to the node's position.
+        # This detaches node from the tree, but it will be reattached
+        # later.
+        if node.parent is not None:
             node.parent.replace_child(node, node.right)
-        else:
+        else:  # node is root
             self.root = node.right
             self.root.parent = None
 
-        node.right.self_child("left", node)
-        node.set_child("right", right_left_child)
+        # Step 2 - the node becomes the left child of what used
+        # to be its right child, but is now its parent. This will
+        # detach right_left_child from the tree.
+        node.right.set_child('left', node)
+
+        # Step 3 - reattach right_left_child as the right child of node.
+        node.set_child('right', right_left_child)
 
         return node.parent
 
-    # Right rotation
+    # Performs a right rotation at the given node. Returns the
+    # subtree's new root.
     def rotate_right(self, node):
+        # Define a convenience pointer to the left child of the
+        # right child.
         left_right_child = node.left.right
 
+        # Step 1 - the left child moves up to the node's position.
+        # This detaches node from the tree, but it will be reattached
+        # later.
         if node.parent is not None:
             node.parent.replace_child(node, node.left)
         else:  # node is root
             self.root = node.left
             self.root.parent = None
 
+        # Step 2 - the node becomes the right child of what used
+        # to be its left child, but is now its parent.
         node.left.set_child('right', node)
 
+        # Step 3 - reattach left_right_child as the left child of node.
         node.set_child('left', left_right_child)
 
         return node.parent
 
-    # Updates the given node's height and rebalances the subtree
+    # Updates the given node's height and rebalances the subtree if
+    # the balancing factor is now -2 or +2.
     def rebalance(self, node):
 
-        # update the height of this node.
+        # First update the height of this node.
         node.update_height()
 
         # Check for an imbalance.
@@ -134,7 +164,6 @@ class AVLTree:
         if self.root is None:
             self.root = node
             node.parent = None
-
         else:
             # Step 1 - do a regular binary search tree insert.
             current_node = self.root
@@ -180,7 +209,7 @@ class AVLTree:
         if node.left is not None and node.right is not None:
             # Find successor
             successor_node = node.right
-            while successor_node.left is not None:
+            while successor_node.left != None:
                 successor_node = successor_node.left
 
             # Copy the value from the node
@@ -240,4 +269,3 @@ class AVLTree:
             return False
         else:
             return self.remove_node(node)
-
