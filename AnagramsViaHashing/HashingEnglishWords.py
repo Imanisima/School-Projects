@@ -7,23 +7,29 @@ Lab: 4
 Purpose: Implement an algorithm to find the anagrams of a word using hash tables instead of a binary search tree. This program will also compute the average number of comparisons required to perform retrieval and compute the load factor.
 
 """
-file = "word.txt"
+original_text = "word.txt"
+test = "test.txt"
 
 
 def main():
-    hash_table = create_table(file)
-    print("Hash table successfully generated!")
-    print("Load factor: ", load_factor(hash_table))
-    print("Average number of comparisons: ", avg_comparisons(hash_table, file))
+    demo = original_text  # Change assignment to one of the above files to test functions
+    
+    print("File used to generate hash table: ", demo.upper())
+    print("Loading\n.\n.\n.")
+    hash_table = create_table(demo)
+
+    print("\nHASH TABLE SUCCESSFULLY GENERATED!\nLoading\n.\n.\n.")
+    print("LOAD FACTOR: ", load_factor(hash_table))
+    print("AVERAGE NUMBER OF COMPARISONS: ", avg_comparisons(hash_table, demo))
 
 
 # Creating the hash table
-def create_table(file):
+def create_table(file_name):
     # Get the total number of words in the file to determine the size of the table
-    num_of_words = total_words(file)
+    num_of_words = total_words(file_name)
     hash_table = [None] * num_of_words
 
-    with open(file) as f:
+    with open(file_name) as f:
         for line in f:
             line = line.rstrip()
             word = line.lower() # convert all words to same ascii
@@ -34,9 +40,9 @@ def create_table(file):
 
 
 # Determines the size of the file
-def total_words(file):
+def total_words(file_name):
     num_of_words = 0
-    with open(file) as f:
+    with open(file_name) as f:
         for line in f:
             num_of_words += 1
     f.close()
@@ -51,13 +57,13 @@ def determine_hash_value(word, num_of_words):
 
 
 # Retrieves the average comparisons for the words
-def avg_comparisons(hash_table, file):
+def avg_comparisons(hash_table, file_name):
     counter = 0
     num_of_comparisons = 0
-    num_of_words = total_words(file)
+    num_of_words = total_words(file_name)
 
     temp = dict()
-    with open(file) as f:
+    with open(file_name) as f:
         for line in f:
             line = line.rstrip()
             word = line.lower()
