@@ -1,3 +1,5 @@
+LAB 4
+
 In the previous lab, a BST was used to find the anagrams of a word. However, to improve the running time of the program we have implemented the hash table function.
 
 Requirements:
