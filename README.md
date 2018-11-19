@@ -1,2 +1,2 @@
 # CS2302
-Labs written in python
+Class labs written in python
