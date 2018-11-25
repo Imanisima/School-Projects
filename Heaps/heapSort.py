@@ -7,7 +7,6 @@ Class: CS2302 1:30
 
 Purpose: Implement the Min-Heap data structure and heapsort then test using ONE of the following methods:
 
-    * Unit Tests
     * Read a file with a list of numbers separated by commas and printing the sorted sequence
     * Create a separate file where heapsort is called using hard-coded lists of numbers
 """
