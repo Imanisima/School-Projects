@@ -1,3 +1,4 @@
+import random
 import MinHeap
 
 """
@@ -9,21 +10,21 @@ Purpose: Implement the Min-Heap data structure and heapsort then test using ONE 
 
     * Unit Tests
     * Read a file with a list of numbers separated by commas and printing the sorted sequence - Done
-    * Create a separate file where heapsort is called using hard-coded lists of numbers - Done
+    * Create a separate file where heap sort is called using hard-coded lists of numbers - Done
 """
 
 
 # Arranges list into min-heap ~ Testing purposes only
 def testing():
     h = MinHeap.MinHeap()
-    test = [5, 32, 1, 0, 6]
+    test = random.sample(range(0, 50), 6)
     print(test, "\n------------------------\n")
 
     for num in test:
         h.insert(num)
         print(" --> new array: %s\n" % h.heap_array)
 
-    print("FINAL MIN-HEAP: \n\t", h.heap_array)
+    print("MIN-HEAP: \n\t", h.heap_array)
 
 
 # Sort the list in ascending order ~ O(n log n)
@@ -61,7 +62,7 @@ def read_file():
 
 
 def main():
-    print("Testing the following list: ")
+    print("TESTING the following list: ")
     testing()
     print("---------------------------------------\n")
 
@@ -70,7 +71,7 @@ def main():
     # HARD-CODED
     print("~*~Hardcoded values~*~")
 
-    hard_list = [12, 6, 54, 2, 20]
+    hard_list = random.sample(range(0, 61), 6)
     print("\nUNSORTED: ", hard_list)
     heap_sort(hard_list)
     print("NOW SORTED: ", hard_list)
