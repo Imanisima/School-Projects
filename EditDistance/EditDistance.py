@@ -13,7 +13,7 @@ def edit_distance(s1, s2):
     len_s1 = len(s1)
     len_s2 = len(s2)
 
-    # create a table of length n+1 for s1 and length m+1 for s2 to account for empty string
+    # create a matrix of length n+1 for s1 and length m+1 for s2 to account for empty string
     m = [[0 for x in range(len_s2 + 1)] for x in range(len_s1 + 1)]
 
     for i in range(len_s1 + 1):
@@ -46,8 +46,8 @@ def edit_distance(s1, s2):
 
 
 def main():
-    s1 = "miners"
-    s2 = "money"
+    s1 = "money"
+    s2 = "miners"
 
     print("Comparing the following strings: \n"
           "str1: %s\n"
