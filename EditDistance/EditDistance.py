@@ -25,33 +25,54 @@ def display_example():
     print("\nEdit Distance: %d" % (edit_distance(s1, s2)))
 
 
+def user_input():
+    print("-" * 35)
+    print("\t\t~`~\tUSER INPUT\t~`~")
+    print("-" * 35)
+
+    yes = 'Y'.lower()
+    while yes == 'Y'.lower():
+
+        user_choice = input("Would you like to compare your own pair of strings? [y/n]")
+        if user_choice != yes:
+            user_choice2 = input("Would you like to look at the example again?[y/n]")
+            if user_choice2 == 'Y'.lower():
+                display_example()
+                time.sleep(2)
+                sys.exit()
+            sys.exit()
+
+        else:
+            s1 = input("-> Please type in a string to compare: ")
+            s2 = input("-> Please type in another string to compare: ")
+
+            print("s1: %s\ns2: %s" % (s1, s2))
+            print("Edit Distance: %d" % (edit_distance(s1, s2)))
+
+
 def edit_distance(s1, s2):
     len_s1 = len(s1)
     len_s2 = len(s2)
 
-    # create a matrix of length n+1 for s1 and length m+1 for s2 to account for empty string
     m = [[0 for x in range(len_s2 + 1)] for x in range(len_s1 + 1)]
 
     for i in range(len_s1 + 1):
         for j in range(len_s2 + 1):
-            # ~~~~ Case 1: subset of string is empty ~~~~
-            # --------------------------------------------#
+            # ~~~~ Case 1: subset of string is empty ~~~~ #
 
             # if s1 is empty but not s2 then insert
             if i == 0:
-                m[i][j] = j  # number of operations equates to s2
+                m[i][j] = j  # min number of operations equates to s2
 
             # if s2 is empty but not s1 then remove
             elif j == 0:
                 m[i][j] = i  # min number of operations equates to s1
 
-            # ~~~~~ Case 2: last chars are equal ~~~~~
-            # ------------------------------------#
+            # ~~~~~ Case 2: last chars are equal ~~~~~ #
             elif s1[i-1] == s2[j-1]:
                 m[i][j] = m[i-1][j-1]  # Change nothing and shrink string
 
-            # ~~~~ Case 3: last chars are different ~~~~
-            # -------------------------------------#
+            # ~~~~ Case 3: last chars are different ~~~~ #
             else:
                 m[i][j] = 1 + min(m[i][j-1],  # insert
                                   m[i-1][j],  # delete
@@ -73,27 +94,7 @@ def main():
     """ ---------------------------- 
     |           User Input         |
     -------------------------------- """
-    print("-" * 35)
-    print("\t\t~`~\tUSER INPUT\t~`~")
-    print("-"*35)
-
-    yes = 'Y'.lower()
-    while yes == 'Y'.lower():
-
-        user_choice = input("Would you like to compare your own pair of strings? [y/n]")
-        if user_choice != yes:
-            user_choice2 = input("Would you like to look at the example again?[y/n]")
-            if user_choice2 == 'Y'.lower():
-                display_example()
-                time.sleep(2)
-                sys.exit()
-            sys.exit()
-        else:
-            s1 = input("-> Please type in a string to compare: ")
-            s2 = input("-> Please type in another string to compare: ")
-
-            print("s1: %s\ns2: %s" % (s1, s2))
-            print("Edit Distance: %d" % (edit_distance(s1, s2)))
+    user_input()
 
 
 if __name__ == '__main__':
