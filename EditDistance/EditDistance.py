@@ -18,20 +18,28 @@ def edit_distance(s1, s2):
 
     for i in range(len_s1 + 1):
         for j in range(len_s2 + 1):
-            # Case 1: subset of string is empty
-            if i == 0:  # insert if s1 is empty
-                m[i][j] = j  # number of operations
-            elif j == 0:  # remove rest of chars from second string if s2 is empty
-                m[i][j] = i  # min ops = i
+            # ~~~~ Case 1: subset of string is empty ~~~~
+            # --------------------------------------------#
 
-            # Case 2: Chars are equal
+            # if s1 is empty but not s2 then insert
+            if i == 0:
+                m[i][j] = j  # number of operations equates to s2
+
+            # if s2 is empty but not s1 then remove
+            elif j == 0:
+                m[i][j] = i  # min number of operations equates to s1
+
+            # ~~~~~ Case 2: last chars are equal ~~~~~
+            # ------------------------------------#
             elif s1[i-1] == s2[j-1]:
-                m[i][j] = m[i-1][j-1]
-            # Case 3: Chars are different
+                m[i][j] = m[i-1][j-1]  # Change nothing and shrink string
+
+            # ~~~~ Case 3: last chars are different ~~~~
+            # -------------------------------------#
             else:
-                m[i][j] = 1 + min(m[i][j-1],
-                                  m[i-1][j],
-                                  m[i-1][j-1])
+                m[i][j] = 1 + min(m[i][j-1],  # insert
+                                  m[i-1][j],  # delete
+                                  m[i-1][j-1])  # replace
 
     print("\nPrinting matrix: \n", np.array(m))
     return m[len_s1][len_s2]
