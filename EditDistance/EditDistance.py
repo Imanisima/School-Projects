@@ -1,7 +1,5 @@
 import sys
 import time
-import subprocess
-import os
 import numpy as np
 
 """
