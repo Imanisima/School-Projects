@@ -1,1 +1,1 @@
-Heapsort and NLP
+Heapsort, Hashtables, and NLP
