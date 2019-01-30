@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HW0_WarmingUp/HW0_WarmingUp.iml" filepath="$PROJECT_DIR$/HW0_WarmingUp/HW0_WarmingUp.iml" />
       <module fileurl="file://$PROJECT_DIR$/HelloWorld/HelloWorld.iml" filepath="$PROJECT_DIR$/HelloWorld/HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/Objects.iml" filepath="$PROJECT_DIR$/Objects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PriceWatcher_v1/PriceWatcher_v1.iml" filepath="$PROJECT_DIR$/PriceWatcher_v1/PriceWatcher_v1.iml" />
     </modules>
   </component>
 </project>
