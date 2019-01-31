@@ -10,9 +10,8 @@ package PriceWatcher;
 
 public class Main {
 
-    private void run(){
+    private void run() {
         Item item = new Item();
-
         ConsoleUI ui = new ConsoleUI(item);
         ui.showWelcome();
 
@@ -27,7 +26,8 @@ public class Main {
                     // include updated price
                     break;
                 case ConsoleUI.VIEWPAGE:
-                    // send user to original webpage
+                    System.out.println("Showing Page");
+                    Item.showPage();
                     break;
             }
 
