@@ -1,5 +1,13 @@
 package PriceWatcher;
 
+/*
+* Name:
+* Date:
+*
+* Version: 1
+*
+* */
+
 public class Main {
 
     public void run(){
@@ -16,20 +24,21 @@ public class Main {
         *
         * */
 
-        int request = -1;
+        int request;
         do {
+
             ui.showItem();
             request = ui.promptUser();
 
             switch (request){
-                case 1: // Update Price
+                case ConsoleUI.checkPrice: // Check Price
                     break;
-                case 2: // ....
+                case ConsoleUI.viewPage: // Send user to original web page
                     break;
             }
 
 
-        } while(request != -1);
+        } while(request != ConsoleUI.quitApp);
     }
 
 
