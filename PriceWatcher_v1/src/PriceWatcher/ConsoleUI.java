@@ -23,7 +23,6 @@ class ConsoleUI {
         Item.getName();
         Item.getUrl();
         Item.getPrice();
-        Item.getPriceChange();
         Item.getDateAdded();
     }
 

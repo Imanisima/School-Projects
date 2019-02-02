@@ -2,8 +2,7 @@ package PriceWatcher;
 
 /*
 * TO DO:
-*   Input error catch for when no options are choise
-*   Open url in terminal when chosen [view page]
+*   Input error catch for when none of the options listed are chosen
 *   Change price and percentage change
 *
 * */
