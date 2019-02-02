@@ -1,11 +1,11 @@
 package PriceWatcher;
 
 /*
-* TO DO:
-*   Input error catch for when none of the options listed are chosen
-*   Change price and percentage change
-*
-* */
+ * TO DO:
+ *   Input error catch for when none of the options listed are chosen
+ *   Change price and percentage change
+ *
+ * */
 
 public class Main {
 
