@@ -17,14 +17,23 @@ class ConsoleUI {
         System.out.println("WELCOME TO Price Watcher!");
     }
 
-    /* Used for testing purposes! Need to avoid magic numbers */
     void showItem() {
         System.out.println();
 
         Item.getName();
         Item.getUrl();
         Item.getPrice();
-        Item.getPriceChange(); // (a - b) / a * 100
+        Item.getPriceChange();
+        Item.getDateAdded();
+    }
+
+    void showUpdatedPrice(){
+        System.out.println();
+
+        Item.getName();
+        Item.getUrl();
+        Item.getUpdatedPrice();
+        Item.getPriceChange();
         Item.getDateAdded();
     }
 

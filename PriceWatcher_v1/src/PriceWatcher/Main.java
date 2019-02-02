@@ -13,17 +13,20 @@ public class Main {
     private void run() {
         Item item = new Item();
         ConsoleUI ui = new ConsoleUI(item);
+
         ui.showWelcome();
+        ui.showItem();
 
         int request;
+
         do {
-            ui.showItem();
 
             request = ui.promptUser();
 
             switch (request){
                 case ConsoleUI.CHECKPRICE:
-                    // include updated price
+                    System.out.println("Updating Price");
+                    ui.showUpdatedPrice();
                     break;
                 case ConsoleUI.VIEWPAGE:
                     System.out.println("Showing Page");
@@ -35,7 +38,7 @@ public class Main {
 
         } while(request != ConsoleUI.QUITAPP);
 
-        System.out.println("Good-bye!");
+        System.out.println("Terminating Program.");
     }
 
 
