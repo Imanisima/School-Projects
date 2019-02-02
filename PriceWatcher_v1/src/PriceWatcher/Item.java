@@ -25,7 +25,7 @@ class Item {
     }
 
     static void getUpdatedPrice(){
-        System.out.printf("Updated Price:\t%s\n", NEWPRICE);
+        System.out.printf("Updated Price:\t%s\n", String.format("%.2f", NEWPRICE));
     }
 
     /* Ensure that PRICE fluctuates each time for testing */
