@@ -1,33 +1,35 @@
 package PriceWatcher;
 
 /*
-* TO DO:
-*   Input error catch for when no options are choise
-*   Open url in terminal when chosen [view page]
-*   Change price and percentage change
-*
-* */
+ * TO DO:
+ *   Input error catch for when none of the options listed are chosen
+ *   Change price and percentage change
+ *
+ * */
 
 public class Main {
 
-    private void run(){
+    private void run() {
         Item item = new Item();
-
         ConsoleUI ui = new ConsoleUI(item);
+
         ui.showWelcome();
+        ui.showItem();
 
         int request;
+
         do {
-            ui.showItem();
 
             request = ui.promptUser();
 
             switch (request){
                 case ConsoleUI.CHECKPRICE:
-                    // include updated price
+                    System.out.println("Updating Price");
+                    ui.showUpdatedPrice();
                     break;
                 case ConsoleUI.VIEWPAGE:
-                    // send user to original webpage
+                    System.out.println("Showing Page");
+                    Item.showPage();
                     break;
             }
 
@@ -35,7 +37,7 @@ public class Main {
 
         } while(request != ConsoleUI.QUITAPP);
 
-        System.out.println("Good-bye!");
+        System.out.println("Terminating Program.");
     }
 
 

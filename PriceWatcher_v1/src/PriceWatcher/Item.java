@@ -1,27 +1,52 @@
 package PriceWatcher;
 
+import java.awt.*;
+import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 class Item {
 
-    public static void getName(String name){
-        System.out.println("Name:\t" + name);
+    private static final String WEBURL = "https://www.bestbuy.com/site/google-home-hub-with-google-assistant-chalk/6290313.p?skuId=6290313";
+    private static final String NAME = "Google - Home Hub";
+    private static final double PRICE = 99.99;
+    private static double NEWPRICE = PRICE  * 0.8;
+
+    static void getName() {
+        System.out.printf("Name:\t%s\n", NAME);
     }
 
-    /* TO DO: open url through terminal */
-    public static void getUrl(String webUrl){
-        System.out.println("URL:\t" + webUrl);
+    static void getUrl() {
+        System.out.printf("URL:\t%s\n", WEBURL);
     }
 
-    public static void getPrice(double price){
-        System.out.println("Price:\t$" + price);
+    static void getPrice() {
+        System.out.printf("Price:\t$%s\n", PRICE);
     }
 
-    /* Ensure that price fluctuates each time for testing */
-    public static void getPriceChange(double priceChange){
-        System.out.println("Change:\t" + priceChange + "%");
+    static void getUpdatedPrice(){
+        System.out.printf("Updated Price:\t%s\n", NEWPRICE);
     }
 
-    /* Stays the same --- Don't touch*/
-    public static void getDateAdded(String dateAdded){
-        System.out.println("Added:\t" + dateAdded);
+    /* Ensure that PRICE fluctuates each time for testing */
+    static void getPriceChange() {
+        double priceChange = (NEWPRICE - PRICE) / PRICE * 100;
+        System.out.println("Change: " + String.format("%.2f", priceChange) + "%");
+    }
+
+    static void getDateAdded() {
+        Date date = new Date();
+        SimpleDateFormat f = new SimpleDateFormat("MM.dd.yyyy");
+        System.out.printf("Date Added:\t%s\t(Initial Price: " + PRICE + ")\n", f.format(date));
+    }
+
+    static void showPage() {
+        try {
+            URI u = new URI(WEBURL);
+            Desktop desktop = Desktop.getDesktop();
+            desktop.browse(u);
+        } catch (Exception e) {
+            System.out.println("Cannot load site.");
+        }
     }
 }
