@@ -1,2 +1,2 @@
-## JavaChat Dialog :black_square_button:
+## JavaChat Dialog :computer:
 
