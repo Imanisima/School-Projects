@@ -1,18 +1,25 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class ChatDialog extends JDialog{
     private static JLabel label;
-    private static JTextField textField;
+    private static JPanel northPane;
+    private static JPanel southPane;
+    private static JPanel chatBox;
+    private static JButton connectBtn;
+    private static JButton sendBtn;
+    protected static JTextField textField;
     private static JTextField textField2;
+    private final static String newline = "\n";
 
-    private static JTextArea textArea;
+    protected static JTextArea textArea;
     private static JLabel displayText;
     private JLabel status;
-    private static JScrollPane scrollPanel;
+    private static JScrollPane scrollPane;
 
     private static JFrame frame;
 
@@ -42,8 +49,8 @@ public class ChatDialog extends JDialog{
             setLayout(new BorderLayout());
 
             /****** Top Of Page *******/
-            JPanel northPane = new JPanel();
-            JButton connectBtn = new JButton("Connect");
+            northPane = new JPanel();
+            connectBtn = new JButton("Connect");
 
             // Change button text when clicked
             connectBtn.addActionListener(event -> {
@@ -64,28 +71,44 @@ public class ChatDialog extends JDialog{
             northPane.add(connectBtn);
             northPane.add(textField);
             northPane.add(textField2);
+
             add(northPane, BorderLayout.PAGE_START);
+            pack();
+
+
+            /** Chat Area **/
+            chatBox = new JPanel();
+            textArea = new JTextArea(30, 30);
+            textArea.setEditable(false);
+            scrollPane = new JScrollPane(textArea);
+            chatBox.add(scrollPane);
+            add(chatBox, BorderLayout.CENTER);
             pack();
 
 
 
             /******* Botton Of Page *******/
-            JPanel southPane = new JPanel();
-            textField = new JTextField("Enter a message...",15);
+            southPane = new JPanel();
+            textField = new JTextField("Type something...",15);
 
-            /* Display Warning Message If Not Connected */
-            JButton sendBtn = new JButton("Send");
             southPane.add(textField);
-
             southPane.add(new JButton(new AbstractAction("Send") {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String s = e.getActionCommand();
-                    if(s.equals("Send") && connectBtn.getText().equals("Connect")) {
+                    if (connectBtn.getText().equals("Connect")) {
                         warn("Not Connected to a server!");
+                    } else {
+
+                        /* Display the message onto the screen */
+                        String text = textField.getText();
+                        textArea.append(text + newline);
+                        textField.selectAll();
+                        textArea.setCaretPosition(textArea.getDocument().getLength());
                     }
                 }
             }));
+
             add(southPane, BorderLayout.PAGE_END);
             pack();
     }
@@ -93,7 +116,7 @@ public class ChatDialog extends JDialog{
 
     /** Show the given warning or error message in a modal dialog. */
     private void warn(String msg) {
-        JOptionPane.showMessageDialog(this, msg, "JavaChat",
+        JOptionPane.showMessageDialog(this, msg, "JavaChat Dialog",
                 JOptionPane.PLAIN_MESSAGE);
     }
 
