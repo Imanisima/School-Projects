@@ -9,12 +9,14 @@ public class ChatDialog extends JDialog {
     private static JPanel southPane;
     private static JPanel chatBox;
     private static JButton connectBtn;
+    private static JButton sendBtn;
 
     protected static JTextField textField;
     private static JTextField textField2;
+    
     private final static String newline = "\n";
-
     protected static JTextArea textArea;
+    
     private static JScrollPane scrollPane;
 
     /** Default dimension of the dialog. */
@@ -37,19 +39,20 @@ public class ChatDialog extends JDialog {
 
     /** Configure GUI of this dialog. */
     private void configureGui() {
-        //-- WRITE YOUR CODE HERE
             setLayout(new BorderLayout());
             setBackground(new Color(196,190,7));
 
             /****** Top Of Page *******/
             northPane = new JPanel();
             connectBtn = new JButton("Connect");
+            connectBtn.setToolTipText("Press to connect to network!");
 
             // Change button text when clicked
             connectBtn.addActionListener(event -> {
                 String s = event.getActionCommand();
                 if(s.equals("Connect")){
                     connectBtn.setLabel("Disconnect");
+                    connectBtn.setToolTipText("Press to disconnect from the network!");
                     setBackground(new Color(196,190,7));
                 }
                 else if(s.equals("Disconnect")){
@@ -76,6 +79,7 @@ public class ChatDialog extends JDialog {
             chatBox = new JPanel();
             textArea = new JTextArea(30, 30);
             textArea.setBorder(BorderFactory.createLineBorder(Color.black));
+            textArea.setLineWrap(true);
             textArea.setEditable(false);
 
             scrollPane = new JScrollPane(textArea,ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -88,12 +92,14 @@ public class ChatDialog extends JDialog {
 
             /******* Botton Of Page *******/
             southPane = new JPanel();
-            textField = new JTextField(15);
 
+            textField = new JTextField(15);
             textField = new JTextField("Type something...",15);
             focusListener(textField);
-
             southPane.add(textField);
+
+            sendBtn = new JButton("Send");
+            sendBtn.setToolTipText("Press to send a message!");
             southPane.add(new JButton(new AbstractAction("Send") {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -105,7 +111,8 @@ public class ChatDialog extends JDialog {
                     } else {
                         /* Display the message onto the screen */
                         String text = textField.getText();
-                        textArea.append(text + newline);
+                        textArea.setForeground(Color.BLUE);
+                        textArea.append(">>: " + text + newline);
                         textField.selectAll();
                         textArea.setCaretPosition(textArea.getDocument().getLength());
                         textField.setText("");
