@@ -1,31 +1,24 @@
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class ChatDialog extends JDialog{
-    private static JLabel label;
+public class ChatDialog extends JDialog {
     private static JPanel northPane;
     private static JPanel southPane;
     private static JPanel chatBox;
     private static JButton connectBtn;
-    private static JButton sendBtn;
+
     protected static JTextField textField;
     private static JTextField textField2;
     private final static String newline = "\n";
 
     protected static JTextArea textArea;
-    private static JLabel displayText;
-    private JLabel status;
     private static JScrollPane scrollPane;
 
-    private static JFrame frame;
-
-
     /** Default dimension of the dialog. */
-    private final static Dimension DEFAULT_DIMENSION = new Dimension(400, 600);
+    private final static Dimension DEFAULT_DIMENSION = new Dimension(400, 420);
 
     /** Create a main dialog. */
     public ChatDialog() {
@@ -38,8 +31,7 @@ public class ChatDialog extends JDialog{
         super((JFrame) null, "JavaChat");
         configureGui();
         setSize(dim);
-        //setResizable(false);
-//        addComponentListener(new componentListener(400, 300));
+        setResizable(false);
         setLocationRelativeTo(null);
     }
 
@@ -47,6 +39,7 @@ public class ChatDialog extends JDialog{
     private void configureGui() {
         //-- WRITE YOUR CODE HERE
             setLayout(new BorderLayout());
+            setBackground(new Color(196,190,7));
 
             /****** Top Of Page *******/
             northPane = new JPanel();
@@ -56,17 +49,20 @@ public class ChatDialog extends JDialog{
             connectBtn.addActionListener(event -> {
                 String s = event.getActionCommand();
                 if(s.equals("Connect")){
-                    //warn("Not connected to a server!");
                     connectBtn.setLabel("Disconnect");
+                    setBackground(new Color(196,190,7));
                 }
-                else{
+                else if(s.equals("Disconnect")){
                     connectBtn.setLabel("Connect");
-                    // warn("Not connected to a server!");
+                    setBackground(Color.RED);
                 }
             });
 
             textField = new JTextField("Server", 15);
+            focusListener(textField);
+
             textField2 = new JTextField("Port", 4);
+            focusListener(textField2);
 
             northPane.add(connectBtn);
             northPane.add(textField);
@@ -79,17 +75,23 @@ public class ChatDialog extends JDialog{
             /** Chat Area **/
             chatBox = new JPanel();
             textArea = new JTextArea(30, 30);
+            textArea.setBorder(BorderFactory.createLineBorder(Color.black));
             textArea.setEditable(false);
-            scrollPane = new JScrollPane(textArea);
-            chatBox.add(scrollPane);
+
+            scrollPane = new JScrollPane(textArea,ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+            scrollPane.setPreferredSize(new Dimension(350, 300));
+            chatBox.add(scrollPane, BorderLayout.CENTER);
+
             add(chatBox, BorderLayout.CENTER);
             pack();
 
 
-
             /******* Botton Of Page *******/
             southPane = new JPanel();
+            textField = new JTextField(15);
+
             textField = new JTextField("Type something...",15);
+            focusListener(textField);
 
             southPane.add(textField);
             southPane.add(new JButton(new AbstractAction("Send") {
@@ -97,14 +99,16 @@ public class ChatDialog extends JDialog{
                 public void actionPerformed(ActionEvent e) {
                     String s = e.getActionCommand();
                     if (connectBtn.getText().equals("Connect")) {
-                        warn("Not Connected to a server!");
-                    } else {
+                        warn("Not connected to a server!");
+                        setBackground(Color.RED);
 
+                    } else {
                         /* Display the message onto the screen */
                         String text = textField.getText();
                         textArea.append(text + newline);
                         textField.selectAll();
                         textArea.setCaretPosition(textArea.getDocument().getLength());
+                        textField.setText("");
                     }
                 }
             }));
@@ -117,7 +121,19 @@ public class ChatDialog extends JDialog{
     /** Show the given warning or error message in a modal dialog. */
     private void warn(String msg) {
         JOptionPane.showMessageDialog(this, msg, "JavaChat Dialog",
-                JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    /* when field is clicked on, text will disappear */
+    public void focusListener(JTextField textField){
+        textField.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                JTextField src = (JTextField)e.getComponent();
+                src.setText("");
+                src.removeFocusListener(this);
+            }
+        });
     }
 
     public static void main(String[] args) {
