@@ -1,2 +1,2 @@
-## List of Application built for class
+## This folder contains a list of small applications built for class.
 
