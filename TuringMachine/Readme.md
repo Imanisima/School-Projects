@@ -9,6 +9,7 @@
   * assume that s0 is the blank state _
   
 * an integer array state[n][m]
+
 __Note__: this describes to what state the Turing machine moves if it was in the state qn and sees the symbol sm
 
 * an integer array symbol[n][m]
