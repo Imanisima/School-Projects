@@ -9,7 +9,7 @@
   * assume that s0 is the blank state _
   
 * an integer array state[n][m]
-  __Note__: this describes to what state the Turing machine moves if it was in the state qn and sees the symbol sm
+__Note__: this describes to what state the Turing machine moves if it was in the state qn and sees the symbol sm
 
 * an integer array symbol[n][m]
 __Note__: this describes what symbol should be on the tape after the Turing Machine in the state qn sees the symbol sm (it may be the same symbol as before, or it may be some other symbol written by the Turing machine)
