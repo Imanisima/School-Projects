@@ -10,7 +10,7 @@ def run_Turing_Machine(num_of_states, numOfSymbols, states, symbols,left_to_righ
         current_symbol = tape[head]
         new_symbol = symbols[current_state][current_symbol]
         tape[head] = new_symbol
-        if left_to_right[current_state][current_symbol] == 'l':
+        if left_to_right[current_state][current_symbol] == 'L':
             head -= 1 # move backwards
         else:
             head += 1 # move forward
@@ -27,9 +27,10 @@ def run_Turing_Machine(num_of_states, numOfSymbols, states, symbols,left_to_righ
 
 states = [[4, 4, 1],[2, 1, 2],[2, 2, 3], [3, 3, 3]]
 symbols = [[2, 2, 2], [1, 0, 1], [0, 1, 2], [2, 2, 2], [3, 3, 3]]
-left_to_right = [['r', 'r', 'r'], ['l', 'r', 'l'], ['l', 'l', 'l'], ['l', 'l', 'l'], ['l', 'l', 'l']]
-tape = [2, 2, 2, 1]
+left_to_right = [['R', 'R', 'R'], ['L', 'R', 'L'], ['L', 'L', 'L'], ['L', 'L', 'L'], ['L', 'L', 'L']]
+tape = [1, 2, 1, 2]
 num_of_states = 5
 num_of_symbols = 3
-print("Running Turing Machine...")
+print(tape)
+print("Running Turing Machine...\n\n")
 run_Turing_Machine(num_of_states, num_of_symbols, states, symbols, left_to_right, tape)
