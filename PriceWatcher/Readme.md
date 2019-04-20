@@ -24,3 +24,5 @@ item.
 
     Enter 1 (to check price), 2 (to view page), or -1 to quit? 
 
+Developed in collaboration with @KevinApodaca
+https://github.com/KevinApodaca/CS3331-Advanced-Object-Oriented-Programming
