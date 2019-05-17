@@ -4,8 +4,6 @@
 
 ### Due: February 4, 2019
 
-This homework shall be done individually. 
-
 The purpose of this assignment is to refresh your memory on Java
 programming and become familiar with a Java IDE (Eclipse or IntellJ
 Idea). You will also produce baseline code that you will be extending
@@ -62,46 +60,3 @@ non-functional requirements.
 **R5.** Optionally, the application shall provide a way to view the Web
     page of the item. Learn how to launch a default web browser
     programmatically in Java.
-
----
-### TESTING
-
-   Your code should compile and run correctly under Java 8 or later
-   versions. 
-
-### WHAT AND HOW TO TURN IN
-
-   Submit your program through the Assignment Submission page located
-   in the Homework section of the course website. Your program
-   submission should include the following:
-
-   - hw0.jar, a runnable jar containing bytecode
-   - src directory of source code files
-   
-   The submission page will ask you to zip your program and upload a
-   single zip file. Your zip file should include only a single
-   directory named YourFirstNameLastName containing all your source
-   code files and other support files needed to compile and run your
-   program. DO NOT INCLUDE BYTECODE (.class) FILES. There is a limit
-   on upload file size and the maximum file size is 2MB. You should
-   turn in your programs by midnight on the due date.
-
-### DEMO
-
-   You will need to make one or two minutes demo of your application
-   to the course staff.
-
-### GRADING
-
-   You will be graded on the quality of the design and how clear your
-   code is. Excessively long code will be penalized: don't repeat code
-   in multiple places. Your code should be reasonably documented and
-   sensibly indented so it is easy to read and understand.
-
-   Be sure your name is in the comments in your code.
-
---- 
-### REFERENCES 
-
-   [1] Wikipedia, Strategy pattern, https://en.wikipedia.org/wiki/
-       Strategy_pattern.
