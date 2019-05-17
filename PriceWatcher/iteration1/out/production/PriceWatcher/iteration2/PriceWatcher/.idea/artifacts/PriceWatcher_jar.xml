@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="PriceWatcher:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/PriceWatcher_jar</output-path>
-    <root id="archive" name="PriceWatcher.jar" />
-  </artifact>
-</component>
