@@ -1,36 +1,52 @@
-# Price Watcher Version 4
+# Price Watcher Version 3
 
-In this assignment, you are to extend your HW3 code and create the
-ultimate version of the Price Watcher application that supports
-network and data persistence. Your app shall meet all the relevant
-requirements from the previous homework assignments as well as the
+In this assignment, you are to extend your HW2 program to support
+multiple items. Focus on the design of the UI. You will learn and
+become familar with several Swing widgets such as JDialog, JList (or
+JTable), JMenu, JPopupMenu, JMenuBar and JToolBar. Your application
+shall meet all the relevant requirements from HW2 as well as the
 following new ones.
 
+![Demo gif](https://media.giphy.com/media/Uqe7LXQ8s8v6UBOSap/giphy.gif)
+
 ### R1. 
-    The application shall find the price of a watched item from the
-      item's Web page. Remember that the URL of an item is provided by
-      the user when the item is added to the watch list.
-
-        a. It shall inform the user if the price of an item can't be found
-           (e.g., malformed or non-existing URL).
-
-        b. It shall support item pages from at least three different
-           online stores.
+    Provide a way to manage the list of items whose prices are to be
+    watched over. The user should be able to add a new item, remove an
+    existing item, and change an existing item, e.g., rename the item
+    or change its URL (see R3, R4 and R5 below).
 
 ### R2. 
-    The application shall persist watched items. The items should be
-        stored in an external storage to so that they can be available
-        when the application is closed and launched later.
+    Display all watched items along with their price changes. Consider
+    using a JList (or JTable) for this.
 
 ### R3. 
-    You should separate network and database operations into separate
-        modules (or classes) to decouple them from the rest of the code.
-        Consider introducing new subclasses of the PriceFinder and
-        ItemManager classes.
+    Use custom dialogs (subclasses of JDialog) to add and change an
+    item in the watch list.
+
+#### R4. 
+    Improve the user interface by proving a menu and a tool bar to (a)
+    add a new item and (b) to check the current prices of all
+    items. For each menu item, provide an icon, a mnemonic and an
+    accelerator. For each tool bar button, use an icon and provide a
+    tool tip.
+
+#### R5. 
+    Provide a popup menu to manipulate an indiviual item. Your popup
+    menu shall include menu items for:
+
+    - Checking the current price
+    - Viewing its webpage
+    - Editing it (change the name and URL; see R1 above)
+    - Removing it (see R1 above)
+
+#### R6. 
+    Use JavaDoc to document your classes. Write a Javadoc comment for
+    each class/interface, field, constructor and method.
+
 ### Requirements
 1. (10 points) Design your application and document your design by
    drawing a UML class diagram [Chapter 4 of 1]. You should focus on
-   designing those classes that are modified (from your HW3 design) or
+   designing those classes that are modified (from your HW2 design) or
    newly introduced; highlight them in your diagram.
 
    - Your class diagram should show the main components (classes and
@@ -47,58 +63,37 @@ following new ones.
 2. (90 points) Code your design by making your code conform to your
    design.
 
-3. (bonus points) Introduce other interesting features, e.g.,
+   For R2, use a JList (or JTable) to display multiple items. Note
+   that you can reuse the ItemView class from HW2 to display each item
+   of the list. However, you need to define a custom renderer for the
+   JList; read an online tutorial entitled [JList custom renderer
+   example](https://www.codejava.net/java-se/swing/jlist-custom
+   -renderer-example).
 
-   (10 points) Use a JProgressBar to show the progress of updating the
-      prices of all items, as it may take a while because of network
-      operations.
+   For R3, refer to online documents such as [The Java Tutorials: How
+   to Make Dialogs](https://docs.oracle.com/javase/tutorial/uiswing/
+   components/dialog.html). You can define a subclass of JDialog to
+   specify your own UI layout.
 
-   (10+ points) Provide a way to filter displayed items, e.g., all
-      items from a selected store, or to sort displayed items.
+   For R4, use JMenuBar and JToolBar; refer to the following two
+   online documents:
+
+   - "How to use menus" available from https://docs.oracle.com/
+      javase/tutorial/uiswing/components/menu.html
+   - "How to use tool bars" available from https://docs.oracle.com/
+      javase/tutorial/uiswing/components/toolbar.html
+
+   For R5, you will need to handle mouse events on a JList, i.e.,
+   register a mouse listener to show a popup menu. See sample code
+   "Java Swing How to - Handle mouse event on JList" 
+   (http://www.java2s.com/Tutorials/Java/Swing_How_to/JList/
+   Handle_mouse_event_on_JList.htm).
 
 #### HINTS
    
-   Reuse your HW3 design and code as much as possible. For example,
-   define HW4 Main as a subclass of HW3 Main.
-
-   For R1, introduce a subclass of the PriceFinder class from HW0, say
-   WebPriceFinder, and override the method that, given a URL, finds
-   the price of an item. This will minimize the changes needed to the
-   rest of the program.
-
-   For R2, introduce a subclass of the ItemManager class from HW3, say
-   FileItemManager, and override all mutation methods such as addItem,
-   changeItem, and removeItem to store the watched items in a file.
-   Consider using the JavaScript Object Notation (JSON), a lightweight
-   data-interchange format (see www.json.org) [3] to encode the items
-   and store them in a file. You can find many open-source JSON
-   libraries written in Java (e.g, JSON-java) from
-   www.json.org. Define the following two methods in the Item class for
-   the JSON encoding/decoding.
-
-    public JSONObject toJson() {
-    	Map<String, Object> map = new HashMap<>();
-    	map.put("name", name);
-    	map.put("currentPrice", currentPrice);
-    	...
-    	return new JSONObject(map);
-    }
-    // item.toJson().toString() will give a JSON string of the form:
-    // { "name": "LED Monitor", "currentPrice": 30.99, ... }
-
-    public static Item fromJson(JSONObject obj) {
-        String name = obj.getString("name");
-        float currentPrice = (float) obj.getDouble("currentPrice");
-        ...
-        Item item = new Item(name, ...);
-        ...
-        return item;
-    }
-
-    To save/restore a list of items, use a JSONArray.
-
-   To test price changes, use the following URL that shows a fake
-   item: (http://www.cs.utep.edu/cheon/cs3331/homework/hw4/).
+   Reuse your HW2 design and code as much as possible. For this, you
+   may need to refactor HW2 classes to open up their features or make
+   them extensible.
 
 #### TESTING
 
@@ -119,7 +114,7 @@ following new ones.
    page found in the Homework page of the course website. You should
    submit a single zip file that contains:
 
-   - hw4.jar, a runnable jar containing bytecode and support files 
+   - hw3.jar, a runnable jar containing bytecode and support files 
      (e.g., images and audio clips)
    - src directory of source code files
    
@@ -153,5 +148,3 @@ following new ones.
 
    [2] Holger Gast, How to Use Objects, Addison-Wesley, 2016.
        Sections 9.1 and 9.2. Ebook available from UTEP library.
-
-   [3] Ben Smith, Beginning JSON, Apress, 2015. Ebook.

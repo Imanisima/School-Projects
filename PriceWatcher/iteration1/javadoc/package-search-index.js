@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"src.main.java.Pricewatcher.base"},{"l":"src.main.java.Pricewatcher.console"},{"l":"src.main.java.Pricewatcher.model"},{"l":"src.test.java.Pricewatcher"}]
+packageSearchIndex = [{"l":"PriceWatcher.base"},{"l":"PriceWatcher.console"},{"l":"PriceWatcher.model"}]
