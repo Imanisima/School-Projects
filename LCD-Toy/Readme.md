@@ -13,14 +13,11 @@
 
 ## Instructions :book:
      ## SW1: Move Paddle Left
-        * This button will be disabled before the start of the game!
 
      ## SW2: Start Game
         * This button will be disabled after the start of the game!
         
      ## SW4: Move Paddle Right
-        * This button will be disabled before the start of the game!
         
 Hit the bricks to gain points!
-
-Messages are displayed based on how many points the user has!
+After 8 points, the user wins!!
