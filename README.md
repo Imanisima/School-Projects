@@ -1,4 +1,6 @@
 ### :dart: [Object Oriented Programming](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming) :dart:
+``` Java ```
+
 ---
 1. PriceWatcher App 
 
@@ -10,6 +12,8 @@
 
 
 ### :traffic_light: [Computer Architecture](https://github.com/Imanisima/School-Projects/tree/master/ComputerArch) :traffic_light:
+``` C ```
+
 ---
 ``` Labs built for the MSP430 ```
 1. Tokenizer
@@ -18,12 +22,16 @@
 
 
 ### :arrows_clockwise: [Automata](https://github.com/Imanisima/School-Projects/tree/master/Automata) :arrows_clockwise:
+``` Python ``` ```Java```
+
 ---
 ``` Labs that similate basic Automatas ```
 1. Turing Machine
 2. Finite Automata
 
 ### :round_pushpin: [Elementary Data Structures](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures):round_pushpin:
+```Java```
+
 ---
 ``` Labs that cover the following ```
 1. 1D & 2D Arrays
@@ -36,6 +44,8 @@
 
 
 ### :coffee::snake: [Data Structures](https://github.com/Imanisima/School-Projects/tree/master/DataStructures):coffee::snake:
+``` Java ``` ```Python```
+
 ---
 #### :coffee: Projects in Java :coffee:
 ``` Labs about the following topics with attached PDF instructions ```
