@@ -1,4 +1,9 @@
-### :dart: [Object Oriented Programming](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming) :dart:
+## Below are a list of school projects. Click title to go to directory.
+
+:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:
+
+
+### :small_orange_diamond: [Object Oriented Programming](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming) :small_orange_diamond:
 ``` Java ```
 
 ---
@@ -10,6 +15,7 @@
 
 ``` Smaller projects used to measure understand of object programming ```
 
+:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:
 
 ### :traffic_light: [Computer Architecture](https://github.com/Imanisima/School-Projects/tree/master/ComputerArch) :traffic_light:
 ``` C ```
@@ -20,14 +26,17 @@
 2. MSP430 Toy
 3. Makshift BreakOut Game
 
+:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:
 
 ### :arrows_clockwise: [Automata](https://github.com/Imanisima/School-Projects/tree/master/Automata) :arrows_clockwise:
 ``` Python ``` ```Java```
 
 ---
-``` Labs that similate basic Automatas ```
+``` Labs that similate basic Automatan ```
 1. Turing Machine
 2. Finite Automata
+
+:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:
 
 ### :round_pushpin: [Elementary Data Structures](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures):round_pushpin:
 ```Java```
@@ -42,12 +51,13 @@
 6. Objects
 7. Binary Search Trees
 
+:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:
 
 ### :coffee::snake: [Data Structures](https://github.com/Imanisima/School-Projects/tree/master/DataStructures):coffee::snake:
 ``` Java ``` ```Python```
 
 ---
-#### :coffee: Projects in Java :coffee:
+#### :coffee: [Projects in Java](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Java) :coffee:
 ``` Labs about the following topics with attached PDF instructions ```
 
 1. [Recursive Drawing](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Java/Lab1)
@@ -58,9 +68,8 @@
 6. [NLP Clustering](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Java/Lab6)
 7. [Undirected Graphs and Adjacency Lists](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Java/Lab7)
 8. [Design Algorithms for solving Mathematical Equations](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Java/Lab8)
-
-
-#### :snake: Projects in Python :snake:
+---
+#### :snake: [Projects in Python](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python):snake:
 ``` Labs about the following topics in Python ```
 
 1. [Brute Force and Password Cracker](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/BruteForceAndPwCracking)
@@ -76,4 +85,4 @@
 6. [Topological Sort & Kruskals Algorithm](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/Topological-Kruskals)
 7. [Edit Distance](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/EditDistance)
 
-
+:wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:
