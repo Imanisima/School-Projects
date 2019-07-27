@@ -1,1 +1,2 @@
-Implement methods to determine if an array of integers in a certain range contains duplicate elements.
+# Lab 2: Determining Duplicates
+Use Hashsets and Sorting Algorithms to determine if duplicates are present in an array of integers.
