@@ -1,3 +1,5 @@
+# Lab 3: Binary Search Tree
+
 Implement the following operations for a binary search tree:
 * Inorder traversal using a stack instead of recursion
 * Iterative version of the search operation
