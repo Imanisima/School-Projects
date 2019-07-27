@@ -1,6 +1,4 @@
-## Below is a list of class labs and projects :point_down:
-
-### [Object Oriented Programming](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming)
+### :dart: [Object Oriented Programming](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming) :dart:
 ---
 1. PriceWatcher App 
 
@@ -11,7 +9,7 @@
 ``` Smaller projects used to measure understand of object programming ```
 
 
-### [Computer Architecture](https://github.com/Imanisima/School-Projects/tree/master/ComputerArch)
+### :traffic_light: [Computer Architecture](https://github.com/Imanisima/School-Projects/tree/master/ComputerArch) :traffic_light:
 ---
 ``` Labs built for the MSP430 ```
 1. Tokenizer
@@ -19,13 +17,13 @@
 3. Makshift BreakOut Game
 
 
-### [Automata](https://github.com/Imanisima/School-Projects/tree/master/Automata)
+### :arrows_clockwise: [Automata](https://github.com/Imanisima/School-Projects/tree/master/Automata) :arrows_clockwise:
 ---
 ``` Labs that similate basic Automatas ```
 1. Turing Machine
 2. Finite Automata
 
-### [Elementary Data Structures](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures)
+### :round_pushpin: [Elementary Data Structures](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures):round_pushpin:
 ---
 ``` Labs that cover the following ```
 1. 1D & 2D Arrays
@@ -37,9 +35,9 @@
 7. Binary Search Trees
 
 
-### [Data Structures](https://github.com/Imanisima/School-Projects/tree/master/DataStructures)
+### :coffee::snake: [Data Structures](https://github.com/Imanisima/School-Projects/tree/master/DataStructures):coffee::snake:
 ---
-## Projects in Java
+#### :coffee: Projects in Java :coffee:
 ``` Labs about the following topics with attached PDF instructions ```
 
 1. [Recursive Drawing](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Java/Lab1)
@@ -52,4 +50,20 @@
 8. [Design Algorithms for solving Mathematical Equations](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Java/Lab8)
 
 
-## Projects in Python
+#### :snake: Projects in Python :snake:
+``` Labs about the following topics in Python ```
+
+1. [Brute Force and Password Cracker](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/BruteForceAndPwCracking)
+* Hashes
+2. [Most Frequently Used Passwords](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/MillionPasswords)
+* Linked Lists
+* Dictionary
+3. [Anagrams](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/Anagrams)
+* Red & Black Trees
+* AVL Trees
+4. [Anagrams Using Hashing](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/AnagramsViaHashing)
+5. [Heaps](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/Heaps)
+6. [Topological Sort & Kruskals Algorithm](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/Topological-Kruskals)
+7. [Edit Distance](https://github.com/Imanisima/School-Projects/tree/master/DataStructures/Python/EditDistance)
+
+
