@@ -18,3 +18,9 @@
 2. MSP430 Toy
 3. Makshift BreakOut Game
 
+### [Automata](https://github.com/Imanisima/School-Projects/tree/master/Automata)
+---
+``` Labs that similate basic Automatas ```
+1. Turing Machine
+2. Finite Automata
+
