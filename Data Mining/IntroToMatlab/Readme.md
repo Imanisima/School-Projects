@@ -1,4 +1,4 @@
-## Introduction to Matlab
+## Intro to Matlab & Hierarchical Clustering
 
 Here we take random data and use Matlab to discover more information about the data.
 
