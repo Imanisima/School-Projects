@@ -1,4 +1,5 @@
-## PLU Prototype / PHP Assignment
+## PLU Prototype / PHP Assignment 
+:grapes: :melon: :pineapple: :mushroom: :strawberry:
 
 ### Assignment
 
