@@ -45,7 +45,7 @@
                 <input type="text" name="username" placeholder="Enter Username" required autofocus><br>
 
                 <label for="password"><b>Password</b></label>
-                <input type="text" name="password" placeholder="Enter Password" required><br>
+                <input type="password" name="password" placeholder="Enter Password"  required><br>
 
                 <button type = "submit" name = "login">Sign In</button>
 
