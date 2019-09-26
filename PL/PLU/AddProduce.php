@@ -1,17 +1,33 @@
 <html>
     <head>
-        <title>PLU System</title>
+        <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="~/lib/Font-Awesome/css/all.min.css">
+        <script src="https://use.fontawesome.com/6e47fdd73a.js"></script>
+        <link rel="stylesheet" type="text/js" href="style.css">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>View Produce</title>
+    
     </head>
     <body>
-        <h1>Add Produce</h1>
+        <header>
+            <nav class="nav">
+                <a href ="Logout.php" title = "Logout"> Logout</a>
+                <a href ="WelcomeManager.php"> Go Back</a>
+            </nav>
+        </header>
+
+        <div class="content-wrap">
 
         <?php
-            echo "It worked!<br>";
+           include('ViewProduce.php');
+           include('UpdateProduce.php');
         ?>
-
-        Logout Here <a href = "Logout.php" tite = "Logout"> Sign Out in progress...
-
-
+        
     </body>
+
+    <script type="text/javascript" src="style.js"></script>
 
 </html>

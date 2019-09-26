@@ -1,33 +1,60 @@
 <html>
     <head>
-        <title>PLU System</title>
+        <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="~/lib/Font-Awesome/css/all.min.css">
+
+        <script src="https://use.fontawesome.com/6e47fdd73a.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>PLU System: View Produce</title>
+
     </head>
     <body>
+        <header>
+            <nav class="nav">
+                <a href ="Logout.php" title = "Logout"> Logout</a>
+                <a href ="WelcomeManager.php"> Go Back</a>
+            </nav>
+        </header>
 
         <h1>View Produce</h1>
 
-        <!-- Create a filter for the produce -->
-        <form action="/AddProduce.php">
-            <input type="text" id="filterInput" onkeyup="searchFilter()" placeholder="Input PLU or produce name...">
-            <input type="submit">
-        </form>
+        <div class="content-wrap">
 
-        <?php 
-            // something goes here
-        ?>
+        <input type="text" id="search" onkeyup="filter()" autofocus placeholder="Enter PLU number or Produce name.." >
 
-        Logout Here <a href = "Logout.php" tite = "Logout"> Sign Out in progress...
+            <table id="table">
+            <tr class="header">
+                <th style="width:60%;">Produce</th>
+                <th style="width:40%;">PLU</th>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>94011</td>
+            </tr>
+            <tr>
+                <td>Pepper</td>
+                <td>4065</td>
+            </tr>
+            <tr>
+                <td>Strawberry</td>
+                <td>4246</td>
+            </tr>
+            <tr>
+                <td>Spinach</td>
+                <td>3332</td>
+            </tr>
+            </table>
+        </div>
+
+        <?php
+            
+         ?>
 
     </body>
+
+    <script type="text/javascript" src="style.js"></script>
 </html>
-
-
-<!-- Welcome Message 
-    Search for PLU Codes + Search Button
-    Create Database of various produce (Name : PLU)
-    Add image for each produce listed
-    PLU Information:
-        PLU code
-        Name of produce
-        Latin word for produce
--->
