@@ -30,9 +30,8 @@ echo -e "\nSort first column in ascending order" >> output.txt
 sort -n -k 1 $NEW_LIST >> $SORTED_LIST
 
 # Add three(3) to second half of SKU and then convert the new number to ASCII
-echo -e "\nAdd 3 to the end of each SKU"
-
-
+echo -e "\nAdd 3 to the end of each SKU" >> output.txt
+awk -v s=3 '{print $2+s}' $SORTED_LIST >> output.txt
 
 
 

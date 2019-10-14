@@ -19,3 +19,9 @@ List fish whose chars are 4 characters and less
 If number is even, delete the field from the list
 
 Sort first column in ascending order
+
+Add 3 to the end of each SKU
+118
+109
+108
+102
