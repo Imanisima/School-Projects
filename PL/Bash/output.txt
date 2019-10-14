@@ -1,0 +1,25 @@
+fish list prints hashed numbers only
+3-115
+5-219
+181-99
+9-105
+007-106
+846-723
+
+fish list print fish names
+hake
+snapper
+bass
+tuna
+char
+pike
+
+List fish whose chars are 4 characters and less
+
+If number is even, delete the field from the list
+
+Sort first column in ascending order
+3 115
+007 106
+9 105
+181 99
