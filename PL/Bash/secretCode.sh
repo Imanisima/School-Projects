@@ -1,5 +1,7 @@
 #!/bin/bash
-# DON'T FORGET TO ADD ARGUMENTS WHEN RUNNING THE CODE
+
+# Warning message if user does not input an argument
+if [ -z "$*" ]; then echo "Please enter in 2 files: fishlist.txt and codebook.txt!"; exit 0; fi
 
 # files
 FISHLIST="$1"
@@ -22,6 +24,6 @@ awk -v s=3 '{print $2+s}' $DECODER > $OUTPUT
 # Get the ASCII code
 awk '{printf "%c\n", $1}' $OUTPUT > $DECODER
 
-# Compare to ScrambledMsg to Codebook and print output
+# Compare ScrambledMsg to Codebook and print output
 awk 'NR==FNR { a[$1]=$2; next } ($1 in a) { print a[$1],$2 }' $CODEBOOK $DECODER > $OUTPUT
 cat $OUTPUT
