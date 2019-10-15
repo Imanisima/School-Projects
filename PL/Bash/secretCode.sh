@@ -31,7 +31,10 @@ sort -n -k 1 $NEW_LIST >> $SORTED_LIST
 
 # Add three(3) to second half of SKU and then convert the new number to ASCII
 echo -e "\nAdd 3 to the end of each SKU" >> output.txt
-awk -v s=3 '{print $2+s}' $SORTED_LIST >> output.txt
+awk -v s=3 '{print $2+s}' $SORTED_LIST > $NEW_LIST
 
+# Get the ASCII code
+echo -e "\nPrint ACII" >> output.txt
+awk '{printf "%c\n", $1}' $NEW_LIST > $SORTED_LIST
 
 
