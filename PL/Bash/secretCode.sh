@@ -2,8 +2,8 @@
 # DON'T FORGET TO ADD ARGUMENTS WHEN RUNNING THE CODE
 
 # files
-CODEBOOK="$1" # key
-FISHLIST="$2"
+FISHLIST="$1"
+CODEBOOK="$2" # key
 DECODER="scrambledMsg.txt" #contains scramled message
 OUTPUT="output.txt" # final output
 
@@ -22,6 +22,6 @@ awk -v s=3 '{print $2+s}' $DECODER > $OUTPUT
 # Get the ASCII code
 awk '{printf "%c\n", $1}' $OUTPUT > $DECODER
 
-# Compare to codebook
-grep -Ff $DECODER $CODEBOOK | awk '{printf "%s\n", $2}' $CODEBOOK > $OUTPUT
+# Compare to ScrambledMsg to Codebook and print output
+awk 'NR==FNR { a[$1]=$2; next } ($1 in a) { print a[$1],$2 }' $CODEBOOK $DECODER > $OUTPUT
 cat $OUTPUT
