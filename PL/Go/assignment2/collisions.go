@@ -8,7 +8,6 @@ package main
 
 import (
 	"fmt"
-	//"math"
 )
 
 type cuboid struct {
@@ -23,7 +22,7 @@ type cuboid struct {
 func main(){
 	var listOfCuboids = loadCuboids()
 
-	fmt.Println("\nDo the cuboids overlap?\n")
+	fmt.Println("\nCuboids that overlap:\n")
 
 	for cubeA, n := range listOfCuboids{
 		for cubeB, l := range listOfCuboids { // exclude first dictionary
@@ -37,6 +36,7 @@ func main(){
 	}
 }
 
+// add cuboids to a dictionary
 func loadCuboids() map[string]cuboid{
 	list := map[string]cuboid{
 				"jumpyFlower" : cuboid{0, 2, 1, 2, 0, 1},
@@ -57,7 +57,7 @@ func printResults(c1Name string, c1 cuboid, c2Name string, c2 cuboid, isCollisio
 
 	// only print if an overlap is found
 	if(isCollision){
-		fmt.Printf("%s:\t%v\n%s:\t%v\n%v\n\n", c1Name, c1, c2Name, c2, isCollision)
+		fmt.Printf("%s:\t%v\n%s:\t%v\n\n", c1Name, c1, c2Name, c2)
 		fmt.Println("===================================\n")
 	}
 }
