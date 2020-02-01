@@ -3,7 +3,7 @@
 :wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash::wavy_dash:
 
 
-### Courses
+## Electives
  
 1. Automata -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/Automata)
 2. Computer Architecture I -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ComputerArch)
@@ -12,7 +12,6 @@
 
 ## Foundations
 
-1. Data Structures -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/DataStructures)
-2. Elementary Data Structures -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures)
-3. Object-Oriented Programming -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming)
-4. Programming Languages -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/PL)
+5. Data Structures -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/DataStructures)
+6. Elementary Data Structures -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures)7. Object-Oriented Programming -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming)
+7. Programming Languages -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/PL)
