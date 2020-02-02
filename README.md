@@ -13,5 +13,6 @@
 ## Foundations
 
 5. Data Structures -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/DataStructures)
-6. Elementary Data Structures -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures)7. Object-Oriented Programming -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming)
+6. Elementary Data Structures -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ElemDataStructures)
+7. Object-Oriented Programming -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/ObjectOrientedProgramming)
 7. Programming Languages -> [Click Here](https://github.com/Imanisima/School-Projects/tree/master/PL)
